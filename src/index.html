@@ -3,8 +3,18 @@
 <head>
   <meta charset="utf-8">
   <title>ELM Esraa Task</title>
-  <base href="/elm-esraa-task">
+  <base href="/elm-esraa-task/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // GitHub Pages SPA redirect handler
+    (function(){
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    }());
+  </script>
   <meta name="description" content="ELM Esraa Task — a responsive Angular 21 government services portal built with Bootstrap and PrimeNG, featuring accessible, pixel-perfect UI components.">
   <meta name="theme-color" content="#198754">
   <meta name="robots" content="index, follow">
