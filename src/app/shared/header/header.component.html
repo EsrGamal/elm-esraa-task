@@ -1,0 +1,68 @@
+<header class="header container-fluid" role="banner">
+  <div class="row align-items-center py-3">
+
+    <div class="col-auto d-flex align-items-center">
+      <a routerLink="/" aria-label="ELM Esraa Task - الصفحة الرئيسية">
+        <img src="assets/images/logo1.svg" alt="شعار البوابة" class="logo">
+      </a>
+    </div>
+
+    <!-- Desktop nav -->
+    <nav class="col d-none d-md-block" aria-label="التنقل الرئيسي">
+      <ul class="nav justify-content-center nav-bar">
+        <li class="nav-item"><a class="nav-link active-link" routerLink="/building-license" routerLinkActive="active-link">الرخصة</a></li>
+        <li class="nav-item"><a class="nav-link active-link" routerLink="/form" routerLinkActive="active-link">نموذج عبئة</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/">تبويب</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/">تبويب</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/">تبويب</a></li>
+      </ul>
+    </nav>
+
+    <div class="col-auto d-flex align-items-center gap-3 control">
+      <button type="button" class="btn-icon d-inline-flex align-items-center gap-1" aria-label="بحث">
+        <i class="pi pi-search icon" aria-hidden="true"></i>
+        <span class="d-none d-md-inline">البحث</span>
+      </button>
+      <button type="button" class="btn-icon d-inline-flex align-items-center gap-1" aria-label="تغيير اللغة إلى الإنجليزية">
+        <i class="pi pi-language icon" aria-hidden="true"></i>
+        <span class="lang d-none d-md-inline">English</span>
+      </button>
+      <button type="button" class="btn-icon d-none d-md-inline-flex align-items-center gap-1" aria-label="تسجيل الدخول">
+        <i class="pi pi-user icon" aria-hidden="true"></i>
+        <span>تسجيل الدخول</span>
+      </button>
+
+      <!-- Hamburger toggle (mobile only) -->
+      <button type="button"
+              class="hamburger d-md-none btn-icon"
+              [attr.aria-expanded]="menuOpen()"
+              aria-controls="mobile-nav"
+              aria-label="فتح القائمة"
+              (click)="toggleMenu()">
+        <i class="pi" [class.pi-bars]="!menuOpen()" [class.pi-times]="menuOpen()" aria-hidden="true"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Mobile nav drawer -->
+  <nav id="mobile-nav"
+       class="mobile-nav d-md-none"
+       [class.open]="menuOpen()"
+       aria-label="القائمة الرئيسية للجوال">
+    <ul class="list-unstyled m-0 p-0">
+      <li><a routerLink="/building-license" routerLinkActive="active-link" (click)="closeMenu()">الرخصة</a></li>
+      <li><a routerLink="/form" routerLinkActive="active-link" (click)="closeMenu()">نموذج عبئة</a></li>
+      <li><a routerLink="/" (click)="closeMenu()">تبويب</a></li>
+      <li><a routerLink="/" (click)="closeMenu()">تبويب</a></li>
+      <li><a routerLink="/" (click)="closeMenu()">تبويب</a></li>
+      <li class="mobile-login">
+        <button type="button" class="btn-icon w-100 d-flex align-items-center gap-2" aria-label="تسجيل الدخول">
+          <i class="pi pi-user" aria-hidden="true"></i>
+          <span>تسجيل الدخول</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+</header>

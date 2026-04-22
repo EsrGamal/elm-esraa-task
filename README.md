@@ -1,6 +1,8 @@
-# MyApp
+# ELM Esraa Task
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+Frontend Developer Test Task — an Angular 21 application built with Bootstrap and PrimeNG, featuring a responsive government services portal UI with routing, interactive forms, and accessibility support.
+
+Generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
 
 ## Development server
 

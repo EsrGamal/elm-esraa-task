@@ -1,17 +1,19 @@
 {
-  "name": "my-app",
+  "name": "elm-esraa-task",
   "version": "0.0.0",
+  "description": "ELM Esraa Task — Frontend Developer Test Task",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:my-app": "node dist/my-app/server/server.mjs"
+    "serve:ssr:elm-esraa-task": "node dist/elm-esraa-task/server/server.mjs"
   },
   "private": true,
   "packageManager": "npm@11.6.1",
   "dependencies": {
+    "@angular/animations": "^21.2.9",
     "@angular/common": "^21.2.0",
     "@angular/compiler": "^21.2.0",
     "@angular/core": "^21.2.0",
@@ -20,7 +22,11 @@
     "@angular/platform-server": "^21.2.0",
     "@angular/router": "^21.2.0",
     "@angular/ssr": "^21.2.7",
+    "@primeng/themes": "^21.0.4",
+    "bootstrap": "^5.3.8",
     "express": "^5.1.0",
+    "primeicons": "^7.0.0",
+    "primeng": "^21.1.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

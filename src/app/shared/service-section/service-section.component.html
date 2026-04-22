@@ -1,0 +1,49 @@
+<section class="service d-flex align-items-center" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="row justify-content-between mb-5 p-5">
+      <div class="col-lg-8">
+        <h2 id="services-heading" class="fs-3 fw-medium">قسم الخدمات</h2>
+        <p class="fs-6">هنا يمكنك إضافة وصف مختصر حول الغرض من البوابة متبوعًا بزر الحث على اتخاذ إجراء وصورة أو رسم
+          توضيحي على الجانب الأيسر.</p>
+      </div>
+      <div class="col-lg-2">
+        <button type="button" class="btn btn-light btn-sm shadow-sm btn-outline-success">اعرض الكل</button>
+      </div>
+    </div>
+
+    <div class="carousel-container">
+      <p-carousel
+        [value]="serviceCards"
+        [numVisible]="3"
+        [numScroll]="1"
+        [responsiveOptions]="responsiveOptions"
+        [showIndicators]="true"
+        [showNavigators]="true"
+        [circular]="false"
+        orientation="horizontal">
+        <ng-template let-card pTemplate="item">
+          <article class="service-card">
+            <div class="card-icon-wrapper">
+              <i [ngClass]="['pi', card.icon, 'card-icon']" aria-hidden="true"></i>
+            </div>
+            <h3 class="card-title">{{ card.title }}</h3>
+            <p class="card-description">{{ card.description }}</p>
+            <ul class="card-tags d-flex gap-2 justify-content-center mb-3 list-unstyled p-0">
+              <li class="tag">قسم</li>
+              <li class="tag">قسم</li>
+              <li class="tag">قسم</li>
+            </ul>
+            <div class="card-actions d-flex gap-sm-1 justify-content-start">
+              <button type="button"
+                      class="btn btn-outline-success btn-sm flex-fill"
+                      [attr.aria-label]="'إجراء ثانوي لخدمة ' + card.title">اجراء ثانوي</button>
+              <button type="button"
+                      class="btn btn-success btn-sm flex-fill"
+                      [attr.aria-label]="'إجراء رئيسي لخدمة ' + card.title">اجراء</button>
+            </div>
+          </article>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</section>

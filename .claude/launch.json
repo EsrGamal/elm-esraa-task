@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "building-license",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start", "--", "--port", "4202", "--open", "false"],
+      "port": 4202
+    }
+  ]
+}

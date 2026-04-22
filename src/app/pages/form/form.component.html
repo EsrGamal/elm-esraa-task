@@ -1,0 +1,227 @@
+<div class="form-page" dir="rtl">
+  <div class="d-flex h-100">
+
+    <div class="form-main flex-grow-1 p-4">
+
+      <nav aria-label="breadcrumb" class="mb-2">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">رابط</a></li>
+          <li class="breadcrumb-item active" aria-current="page">رابط</li>
+        </ol>
+      </nav>
+
+      <h1 class="form-title mb-2">حقول النص</h1>
+
+      <p class="form-desc mb-1">
+        عند استخدام النماذج، فإن حقول النموذج القياسية المستخدمة هي حقول نصية تُستخدم عادةً لإدخال نص قصير. حالات حقل النموذج هي
+        الافتراضي، النشط، المركز، الخطأ، التلميح، والمعطل.
+      </p>
+      <p class="required-note mb-3">
+        <span class="text-danger" aria-hidden="true">*</span> المعلومات المطلوبة
+      </p>
+
+      <div class="sr-only" role="status" aria-live="polite">{{ statusMessage() }}</div>
+
+      <form [formGroup]="form" novalidate (ngSubmit)="onNext()">
+
+        <div class="row mb-4">
+          <div class="col-6">
+            <label for="req1" class="field-label required-label">إدخال النص الإلزامي</label>
+            <input id="req1" pInputText formControlName="req1" placeholder="نص تلميحي"
+                   [class.p-invalid]="isInvalid('req1')"
+                   [attr.aria-invalid]="isInvalid('req1')"
+                   [attr.aria-required]="true"
+                   [attr.aria-describedby]="describedBy('req1')"
+                   class="w-100" />
+            <small *ngIf="isInvalid('req1')" [id]="errorId('req1')" class="error-msg" role="alert">
+              <i class="pi pi-times-circle" aria-hidden="true"></i> هذا الحقل مطلوب
+            </small>
+          </div>
+          <div class="col-6">
+            <label for="opt1" class="field-label">إدخال النص الاختياري</label>
+            <input id="opt1" pInputText formControlName="opt1" placeholder="نص تلميحي" class="w-100" />
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-6">
+            <label for="req2" class="field-label required-label">إدخال النص الإلزامي</label>
+            <p-iconfield class="w-100">
+              <p-inputicon class="pi pi-search" />
+              <input id="req2" pInputText formControlName="req2" placeholder="نص تلميحي"
+                     [class.p-invalid]="isInvalid('req2')"
+                     [attr.aria-invalid]="isInvalid('req2')"
+                     [attr.aria-required]="true"
+                     [attr.aria-describedby]="describedBy('req2')"
+                     class="w-100" />
+            </p-iconfield>
+            <small *ngIf="isInvalid('req2')" [id]="errorId('req2')" class="error-msg" role="alert">
+              <i class="pi pi-times-circle" aria-hidden="true"></i> هذا الحقل مطلوب
+            </small>
+          </div>
+          <div class="col-6">
+            <label for="opt2" class="field-label">إدخال النص الاختياري</label>
+            <p-iconfield class="w-100">
+              <p-inputicon class="pi pi-search" />
+              <input id="opt2" pInputText formControlName="opt2" placeholder="نص تلميحي" class="w-100" />
+            </p-iconfield>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-6">
+            <label for="req3" class="field-label required-label">إدخال النص الإلزامي</label>
+            <p-inputgroup>
+              <p-inputgroup-addon>نص</p-inputgroup-addon>
+              <input id="req3" pInputText formControlName="req3" placeholder="نص تلميحي"
+                     [class.p-invalid]="isInvalid('req3')"
+                     [attr.aria-invalid]="isInvalid('req3')"
+                     [attr.aria-required]="true"
+                     [attr.aria-describedby]="describedBy('req3')" />
+              <p-inputgroup-addon>نص</p-inputgroup-addon>
+            </p-inputgroup>
+            <small *ngIf="isInvalid('req3')" [id]="errorId('req3')" class="error-msg" role="alert">
+              <i class="pi pi-times-circle" aria-hidden="true"></i> هذا الحقل مطلوب
+            </small>
+          </div>
+          <div class="col-6">
+            <label for="opt3" class="field-label">إدخال النص الاختياري</label>
+            <p-inputgroup>
+              <p-inputgroup-addon>نص</p-inputgroup-addon>
+              <input id="opt3" pInputText formControlName="opt3" placeholder="نص تلميحي" />
+              <p-inputgroup-addon>نص</p-inputgroup-addon>
+            </p-inputgroup>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-6">
+            <label for="req4" class="field-label required-label">إدخال النص الإلزامي</label>
+            <p-inputgroup>
+              <p-inputgroup-addon>نص</p-inputgroup-addon>
+              <input id="req4" pInputText formControlName="req4" placeholder="نص تلميحي"
+                     [class.p-invalid]="isInvalid('req4')"
+                     [attr.aria-invalid]="isInvalid('req4')"
+                     [attr.aria-required]="true"
+                     [attr.aria-describedby]="describedBy('req4')" />
+            </p-inputgroup>
+            <small *ngIf="isInvalid('req4')" [id]="errorId('req4')" class="error-msg" role="alert">
+              <i class="pi pi-times-circle" aria-hidden="true"></i> هذا الحقل مطلوب
+            </small>
+          </div>
+          <div class="col-6">
+            <label for="opt4" class="field-label">إدخال النص الاختياري</label>
+            <p-inputgroup>
+              <p-inputgroup-addon>نص</p-inputgroup-addon>
+              <input id="opt4" pInputText formControlName="opt4" placeholder="نص تلميحي" />
+            </p-inputgroup>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-6">
+            <label for="req5" class="field-label required-label">إدخال النص الإلزامي</label>
+            <input id="req5" pInputText formControlName="req5" placeholder="نص تلميحي"
+                   [class.p-invalid]="isInvalid('req5')"
+                   [attr.aria-invalid]="isInvalid('req5')"
+                   [attr.aria-required]="true"
+                   [attr.aria-describedby]="describedBy('req5', true)"
+                   class="w-100" />
+            <small *ngIf="!isInvalid('req5')" [id]="helperId('req5')" class="helper-msg">
+              <i class="pi pi-info-circle" aria-hidden="true"></i> نص مساعد
+            </small>
+            <small *ngIf="isInvalid('req5')" [id]="errorId('req5')" class="error-msg" role="alert">
+              <i class="pi pi-times-circle" aria-hidden="true"></i> نص مساعد
+            </small>
+          </div>
+          <div class="col-6">
+            <label for="opt5" class="field-label">إدخال النص الاختياري</label>
+            <input id="opt5" pInputText formControlName="opt5" placeholder="نص تلميحي"
+                   [attr.aria-describedby]="helperId('opt5')"
+                   class="w-100" />
+            <small [id]="helperId('opt5')" class="helper-msg">
+              <i class="pi pi-info-circle" aria-hidden="true"></i> نص مساعد
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-4">
+          <div class="col-6">
+            <label for="req6" class="field-label required-label">إدخال النص الإلزامي</label>
+            <input id="req6" pInputText formControlName="req6" placeholder="نص تلميحي"
+                   class="p-invalid w-100"
+                   aria-invalid="true"
+                   [attr.aria-required]="true"
+                   [attr.aria-describedby]="errorId('req6')" />
+            <small [id]="errorId('req6')" class="error-msg" role="alert">
+              <i class="pi pi-times-circle" aria-hidden="true"></i> نص مساعد
+            </small>
+          </div>
+          <div class="col-6">
+            <label for="opt6" class="field-label">إدخال النص الاختياري</label>
+            <input id="opt6" pInputText formControlName="opt6" placeholder="نص تلميحي"
+                   class="p-invalid w-100"
+                   aria-invalid="true"
+                   [attr.aria-describedby]="errorId('opt6')" />
+            <small [id]="errorId('opt6')" class="error-msg" role="alert">
+              <i class="pi pi-times-circle" aria-hidden="true"></i> نص مساعد
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <div class="col-6">
+            <label for="req7" class="field-label required-label">إدخال النص الإلزامي</label>
+            <input id="req7" pInputText formControlName="req7" placeholder="نص تلميحي"
+                   [class.p-invalid]="isInvalid('req7')"
+                   [attr.aria-invalid]="isInvalid('req7')"
+                   [attr.aria-required]="true"
+                   [attr.aria-describedby]="describedBy('req7')"
+                   class="w-100" />
+            <small *ngIf="isInvalid('req7')" [id]="errorId('req7')" class="error-msg" role="alert">
+              <i class="pi pi-times-circle" aria-hidden="true"></i> هذا الحقل مطلوب
+            </small>
+          </div>
+          <div class="col-6">
+            <label for="opt7" class="field-label">إدخال النص الاختياري</label>
+            <input id="opt7" pInputText formControlName="opt7" placeholder="نص تلميحي" class="w-100" />
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-start gap-2">
+          <p-button type="submit" [label]="currentStep() === steps.length ? 'إرسال' : 'التالي'" styleClass="btn-next" />
+          <p-button type="button" label="رجوع" [outlined]="true" [disabled]="currentStep() === 1" (onClick)="onBack()" styleClass="btn-back" />
+        </div>
+
+      </form>
+    </div>
+
+    <aside class="stepper-sidebar p-4" aria-label="خطوات النموذج">
+      <ol class="stepper-list list-unstyled m-0 p-0">
+        <li *ngFor="let step of steps; let i = index"
+            class="step"
+            [class.completed]="isStepCompleted(i)"
+            [class.active]="isStepActive(i)"
+            [attr.aria-current]="isStepActive(i) ? 'step' : null">
+          <div class="step-indicator">
+            <div class="step-circle"
+                 [class.completed-circle]="isStepCompleted(i)"
+                 [class.active-circle]="isStepActive(i)">
+              <i *ngIf="isStepCompleted(i)" class="pi pi-check" aria-hidden="true"></i>
+              <span *ngIf="!isStepCompleted(i)">{{ i + 1 }}</span>
+            </div>
+            <div *ngIf="i < steps.length - 1" class="step-connector"
+                 [class.completed-connector]="isStepCompleted(i)"></div>
+          </div>
+          <div class="step-content">
+            <span class="step-title">{{ step.title }}</span>
+            <span class="step-desc">{{ step.description }}</span>
+            <span class="sr-only" *ngIf="isStepCompleted(i)">(مكتملة)</span>
+            <span class="sr-only" *ngIf="isStepActive(i)">(الحالية)</span>
+          </div>
+        </li>
+      </ol>
+    </aside>
+
+  </div>
+</div>

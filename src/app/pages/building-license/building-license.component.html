@@ -1,0 +1,277 @@
+<section class="building-license-page" aria-labelledby="bl-title">
+  <div class="container">
+    <nav aria-label="مسار التنقل" class="mb-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">رئيسي</a></li>
+        <li class="breadcrumb-item"><a href="#">رخصة</a></li>
+        <li class="breadcrumb-item active" aria-current="page">رخصة بناء</li>
+      </ol>
+    </nav>
+
+    <div class="sr-only" role="status" aria-live="polite">{{ statusMessage() }}</div>
+
+    <div class="main-layout row g-4">
+      <div class="col-lg-9">
+        <div class="d-flex justify-content-between align-items-start mb-2 gap-3">
+          <div class="header-content">
+            <h1 id="bl-title" class="page-title mb-1">رخصة بناء</h1>
+
+            <div class="category-tabs mb-2" role="tablist" aria-label="تصنيف الخدمة">
+              <button *ngFor="let cat of categories; let i = index"
+                      type="button"
+                      class="category-btn"
+                      [class.active]="activeCategory() === i"
+                      role="tab"
+                      [attr.aria-selected]="activeCategory() === i"
+                      [attr.tabindex]="activeCategory() === i ? 0 : -1"
+                      (click)="selectCategory(i)">
+                {{ cat }}
+              </button>
+            </div>
+
+            <p class="page-description mb-2">
+              مثال على وصف الخدمة لإدارة فقط يتطلب ذلك توثيق عملية البيع والشراء في مكاتب التوثيق أو خدمات
+              كاتب العدل المسجل الفعال بالمسكن.
+            </p>
+            <a href="#" class="service-level-link">
+              <i class="pi pi-link" aria-hidden="true"></i>
+              إتاحة مستوى الخدمة
+            </a>
+          </div>
+          <button type="button" class="btn btn-start-service flex-shrink-0">بدء الخدمة</button>
+        </div>
+
+        <ul class="nav service-tabs mb-4" role="tablist" aria-label="أقسام الخدمة">
+          <li *ngFor="let tab of tabs; let i = index" class="nav-item" role="presentation">
+            <a class="nav-link"
+               [class.active]="activeTab() === i"
+               href="#"
+               role="tab"
+               [attr.aria-selected]="activeTab() === i"
+               [attr.tabindex]="activeTab() === i ? 0 : -1"
+               (click)="selectTab(i, $event)">{{ tab }}</a>
+          </li>
+        </ul>
+
+        <div class="video-placeholder mb-4" role="img" aria-label="فيديو توضيحي للخدمة">
+          <button type="button" class="play-button" aria-label="تشغيل الفيديو التوضيحي">
+            <i class="pi pi-play" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <ol class="steps-list">
+          <li>قم بالدخول إلى البوابة الوطنية للتسجيل الموحد عبر منصة بلدي.</li>
+          <li>اختيار خدمات تراخيص البناء ثم إدخال البنك.</li>
+          <li>خدمات الترخيص ثم اختيار البلدية المطلوبة.</li>
+          <li>اختيار المكتب الهندسي ثم إدخال رقم وصف ولصق نسخه من السند.</li>
+          <li>تقديم الطلب إلى المكتب الهندسي المحدد ثم إدخال المعلومات والمرفقات في المكتب الهندسي وإرسالها إلى البلدية.</li>
+          <li>التأكد من بيانات الطلب والمرفقات والموافقات من قبل البلدية.</li>
+        </ol>
+      </div>
+
+      <aside class="col-lg-3" aria-label="معلومات الخدمة">
+        <div class="sidebar-card">
+          <div class="sidebar-group">
+            <div class="sidebar-item">
+              <div class="sidebar-item-label">
+                <i class="pi pi-user" aria-hidden="true"></i>
+                <span>الفئة المستهدفة</span>
+              </div>
+              <p class="sidebar-item-value">المواطنين وجنسيات دول مجلس التعاون الخليجي والمستثمرون والأجانب</p>
+            </div>
+
+            <div class="sidebar-item">
+              <div class="sidebar-item-label">
+                <i class="pi pi-clock" aria-hidden="true"></i>
+                <span>مدة الخدمة</span>
+              </div>
+              <p class="sidebar-item-value">5.0 أيام</p>
+            </div>
+
+            <div class="sidebar-item">
+              <div class="sidebar-item-label">
+                <i class="pi pi-desktop" aria-hidden="true"></i>
+                <span>قنوات الخدمة</span>
+              </div>
+              <p class="sidebar-item-value">تطبيق الويب والجوال</p>
+            </div>
+
+            <div class="sidebar-item">
+              <div class="sidebar-item-label">
+                <i class="pi pi-tag" aria-hidden="true"></i>
+                <span>تكلفة الخدمة</span>
+              </div>
+              <p class="sidebar-item-value">مجانا</p>
+            </div>
+
+            <div class="sidebar-item">
+              <div class="sidebar-item-label">
+                <i class="pi pi-credit-card" aria-hidden="true"></i>
+                <span>قنوات الدفع</span>
+              </div>
+              <div class="payment-logos">
+                <span class="payment-badge stc-pay">STC Pay</span>
+                <span class="payment-badge mada">mada</span>
+              </div>
+            </div>
+          </div>
+
+          <hr class="sidebar-divider" />
+
+          <div class="sidebar-group">
+            <div class="sidebar-item">
+              <div class="sidebar-item-label">
+                <i class="pi pi-question-circle" aria-hidden="true"></i>
+                <span>الأسئلة الشائعة</span>
+              </div>
+              <a href="#" class="contact-link">
+                <i class="pi pi-external-link" aria-hidden="true"></i>
+                <span>الأسئلة الشائعة للوزارة</span>
+              </a>
+            </div>
+
+            <div class="sidebar-item">
+              <div class="sidebar-item-label">
+                <i class="pi pi-phone" aria-hidden="true"></i>
+                <span>الهاتف</span>
+              </div>
+              <a href="tel:9200343222" class="contact-link" aria-label="اتصل بنا على 9200343222">
+                <i class="pi pi-phone" aria-hidden="true"></i>
+                <span>9200343222</span>
+              </a>
+            </div>
+
+            <div class="sidebar-item">
+              <div class="sidebar-item-label">
+                <i class="pi pi-envelope" aria-hidden="true"></i>
+                <span>البريد الإلكتروني</span>
+              </div>
+              <a href="mailto:help@company.sa" class="contact-link" aria-label="راسلنا عبر البريد الإلكتروني">
+                <i class="pi pi-envelope" aria-hidden="true"></i>
+                <span>help@company.sa</span>
+              </a>
+            </div>
+
+            <button type="button" class="btn btn-download w-100 mt-2">
+              <i class="pi pi-download" aria-hidden="true"></i>
+              تحميل دليل المستخدم
+            </button>
+          </div>
+
+          <hr class="sidebar-divider" />
+
+          <div class="sidebar-group">
+            <div class="sidebar-item-label mb-2">
+              <i class="pi pi-mobile" aria-hidden="true"></i>
+              <span>تطبيقات الجوال</span>
+            </div>
+            <ul class="app-badges list-unstyled m-0 p-0">
+              <li>
+                <a href="#" class="app-badge-btn" aria-label="تحميل التطبيق من App Store">
+                  <i class="pi pi-apple" aria-hidden="true"></i>
+                  <div class="app-badge-text">
+                    <small>Download on the</small>
+                    <span>App Store</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="app-badge-btn" aria-label="تحميل التطبيق من Google Play">
+                  <i class="pi pi-google" aria-hidden="true"></i>
+                  <div class="app-badge-text">
+                    <small>GET IT ON</small>
+                    <span>Google Play</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="app-badge-btn" aria-label="تحميل التطبيق من AppGallery">
+                  <i class="pi pi-th-large" aria-hidden="true"></i>
+                  <div class="app-badge-text">
+                    <small>EXPLORE IT ON</small>
+                    <span>AppGallery</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <app-service-section></app-service-section>
+
+    <div class="bottom-sections mt-4">
+
+      <div class="date-row">
+        <span class="date-label">تاريخ آخر تعديل:</span>
+        <span class="date-value">04/12/2020 - 4:13 م بتوقيت السعودية</span>
+      </div>
+
+      <hr class="bottom-divider" />
+
+      <div class="rating-section border border-start-0 border-end-0 border-success">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+          <div class="rating-info d-flex align-items-center gap-2 flex-wrap">
+            <span class="rating-label">تم تقييم هذه الخدمة بمتوسط</span>
+            <span class="rating-score">{{ avgRating }}</span>
+            <div class="stars" [attr.aria-label]="'متوسط التقييم ' + avgRating + ' من 5'">
+              <ng-container *ngFor="let _ of [1,2,3,4,5]; let i = index">
+                <i *ngIf="i < filledStars()" class="pi pi-star-fill star-filled" aria-hidden="true"></i>
+                <i *ngIf="i === filledStars() && hasHalfStar()" class="pi pi-star-fill star-half" aria-hidden="true"></i>
+                <i *ngIf="i > filledStars() || (i === filledStars() && !hasHalfStar())" class="pi pi-star star-empty" aria-hidden="true"></i>
+              </ng-container>
+            </div>
+            <span class="rating-count">{{ ratingCount }} تقييم</span>
+          </div>
+
+          <div class="user-rating d-flex align-items-center gap-2" role="radiogroup" aria-label="قيّم هذه الخدمة">
+            <button *ngFor="let star of [1,2,3,4,5]"
+                    type="button"
+                    class="star-btn"
+                    role="radio"
+                    [attr.aria-checked]="userRating() === star"
+                    [attr.aria-label]="star + ' من 5 نجوم'"
+                    (mouseenter)="setHover(star)"
+                    (mouseleave)="clearHover()"
+                    (focus)="setHover(star)"
+                    (blur)="clearHover()"
+                    (click)="rate(star)">
+              <i class="pi"
+                 [class.pi-star-fill]="star <= (hoverRating() || userRating())"
+                 [class.pi-star]="star > (hoverRating() || userRating())"
+                 aria-hidden="true"></i>
+            </button>
+            <span *ngIf="ratingSubmitted()" class="rating-thanks">شكراً لتقييمك</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="bottom-divider" />
+
+      <div class="feedback-section">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+          <p class="feedback-question mb-0">هل كانت هذه الصفحة مفيدة؟</p>
+          <div class="feedback-actions d-flex align-items-center gap-2" role="group" aria-label="تقييم الصفحة">
+            <button type="button"
+                    class="btn btn-feedback btn-feedback-yes"
+                    [class.active]="feedback() === 'yes'"
+                    [attr.aria-pressed]="feedback() === 'yes'"
+                    (click)="giveFeedback('yes')">نعم</button>
+            <button type="button"
+                    class="btn btn-feedback btn-feedback-no"
+                    [class.active]="feedback() === 'no'"
+                    [attr.aria-pressed]="feedback() === 'no'"
+                    (click)="giveFeedback('no')">لا</button>
+          </div>
+          <p class="feedback-stats mb-0" aria-live="polite">
+            <ng-container *ngIf="feedback() === null">60% من المستخدمين قالوا نعم من 2843 تعليقاً</ng-container>
+            <ng-container *ngIf="feedback() === 'yes'">شكراً لملاحظاتك الإيجابية.</ng-container>
+            <ng-container *ngIf="feedback() === 'no'">شكراً، ملاحظاتك ستساعدنا على التحسين.</ng-container>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

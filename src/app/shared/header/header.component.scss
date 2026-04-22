@@ -1,0 +1,137 @@
+.header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .logo {
+    height: 40px;
+  }
+
+  .nav-bar {
+    li {
+      margin: 0 10px;
+
+      a {
+        color: #333;
+        font-weight: 500;
+        font-size: larger;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &::after {
+          font-family: "PrimeIcons";
+          font-size: 15px;
+          content: "\e902";
+          margin-right: 8px;
+        }
+
+        &:hover {
+          color: #1B8354;
+          text-decoration: underline;
+          text-decoration-thickness: 2px;
+          text-underline-offset: 8px;
+          text-decoration-color: #1B8354;
+          text-decoration-style: solid;
+        }
+      }
+    }
+  }
+
+  .active-link {
+    color: #1B8354 !important;
+    font-weight: 700 !important;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+    text-decoration-color: #1B8354;
+  }
+
+  .control {
+    font-size: 14px;
+
+    .btn-icon {
+      background: transparent;
+      border: 0;
+      padding: 4px 8px;
+      color: #555;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover { color: #1B8354; }
+
+      &:focus-visible {
+        outline: 2px solid #1B8354;
+        outline-offset: 2px;
+      }
+    }
+
+    .icon {
+      font-size: 18px;
+      color: inherit;
+    }
+
+    .hamburger {
+      font-size: 22px;
+      padding: 4px 6px;
+    }
+  }
+
+  /* ── Mobile nav drawer ── */
+  .mobile-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: #fff;
+    border-top: 1px solid #eee;
+
+    &.open {
+      max-height: 420px;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      border-bottom: 1px solid #f0f0f0;
+
+      a {
+        display: block;
+        padding: 0.85rem 1.25rem;
+        color: #333;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+
+        &:hover,
+        &.active-link { color: #1B8354; }
+
+        &:focus-visible {
+          outline: 2px solid #1B8354;
+          outline-offset: -2px;
+        }
+      }
+
+      &.mobile-login {
+        padding: 0.5rem 1rem;
+        border-bottom: 0;
+
+        .btn-icon {
+          background: transparent;
+          border: 0;
+          color: #555;
+          cursor: pointer;
+          font-size: 0.95rem;
+          padding: 0.4rem 0.25rem;
+
+          &:hover { color: #1B8354; }
+        }
+      }
+    }
+  }
+}

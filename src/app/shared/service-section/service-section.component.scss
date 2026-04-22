@@ -1,0 +1,170 @@
+.service {
+  padding: 60px 0;
+  background-color: #F9FAFB;
+}
+
+::ng-deep .carousel-container {
+  padding: 0 40px;
+  position: relative;
+
+  .p-carousel {
+    .p-carousel-viewport {
+      overflow: hidden;
+      width: 100%;
+
+      .p-carousel-item-list {
+        gap: 1rem;
+      }
+    }
+
+    .p-carousel-container {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .p-carousel-items-container {
+      display: flex;
+      flex-direction: row;
+      transition: transform 0.3s ease;
+      gap: 20px;
+    }
+
+    .p-carousel-item {
+      flex: 0 0 33.333%;
+      padding: 0 10px;
+      box-sizing: border-box;
+
+      @media (min-width: 1200px) { flex: 0 0 40%; }
+      @media (max-width: 1199px) and (min-width: 768px) { flex: 0 0 50%; }
+      @media (max-width: 767px) { flex: 0 0 100%; }
+    }
+
+    .p-carousel-content {
+      .p-carousel-prev,
+      .p-carousel-next {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #1B8354;
+        color: white;
+        border: none;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+
+        &:hover { background-color: #14573A; }
+        &:disabled { opacity: 0.5; cursor: not-allowed; }
+      }
+
+      .p-carousel-prev { left: -20px; }
+      .p-carousel-next { right: -20px; }
+    }
+
+    .p-carousel-indicators {
+      padding: 16px 0;
+      gap: 8px;
+
+      .p-carousel-indicator {
+        button {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #d1d5db;
+          transition: all 0.3s ease;
+
+          &:hover { background-color: #9ca3af; }
+        }
+
+        &.p-carousel-indicator-active button {
+          background-color: #1B8354;
+          width: 10px;
+        }
+      }
+    }
+  }
+}
+
+.service-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  transition: all 0.3s ease;
+  min-height: 300px;
+  height: 100%;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+  }
+
+  .card-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #E8F5E9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .card-icon {
+      font-size: 24px;
+      color: #1B8354;
+    }
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+  }
+
+  .card-description {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .card-tags {
+    margin-bottom: 16px;
+
+    .tag {
+      background-color: #f3f4f6;
+      color: #6b7280;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+  }
+
+  .card-actions {
+    width: 100%;
+    margin-top: auto;
+
+    .btn {
+      border-radius: 6px;
+      font-size: 14px;
+      padding: 8px 16px;
+      font-weight: 500;
+    }
+
+    .btn-success {
+      background-color: #1B8354;
+      border-color: #1B8354;
+
+      &:hover { background-color: #14573A; border-color: #14573A; }
+    }
+
+    .btn-outline-success {
+      color: #1B8354;
+      border-color: #1B8354;
+
+      &:hover { background-color: #1B8354; border-color: #1B8354; color: white; }
+    }
+  }
+}

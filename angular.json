@@ -2,11 +2,12 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "c68fc5ce-6a8d-44b4-b7d2-1a04c6b46c85"
   },
   "newProjectRoot": "projects",
   "projects": {
-    "my-app": {
+    "elm-esraa-task": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -30,7 +31,11 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
@@ -69,10 +74,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-app:build:production"
+              "buildTarget": "elm-esraa-task:build:production"
             },
             "development": {
-              "buildTarget": "my-app:build:development"
+              "buildTarget": "elm-esraa-task:build:development"
             }
           },
           "defaultConfiguration": "development"

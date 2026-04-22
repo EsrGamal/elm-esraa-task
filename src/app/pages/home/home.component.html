@@ -1,0 +1,115 @@
+<section class="hero-section text-white d-flex align-items-center" aria-label="القسم الرئيسي">
+  <div class="container">
+
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <div class="carousel-inner mb-4">
+        <div *ngFor="let slide of heroSlides; let i = index"
+             class="carousel-item"
+             [class.active]="i === 0">
+          <div class="row align-items-center">
+            <div class="col-lg-6 hero-content">
+              <h1 class="display-3 mb-4 fw-medium">{{ slide.title }}</h1>
+              <p class="lead mb-5">{{ slide.description }}</p>
+              <button type="button" class="btn btn-light btn-lg">{{ slide.cta }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-indicators carousel-dots d-flex justify-content-center gap-2 mt-3" role="tablist">
+        <button *ngFor="let slide of heroSlides; let i = index"
+                type="button"
+                class="dot"
+                [class.active]="i === 0"
+                [attr.data-bs-target]="'#heroCarousel'"
+                [attr.data-bs-slide-to]="i"
+                [attr.aria-current]="i === 0 ? 'true' : null"
+                [attr.aria-label]="'الشريحة ' + (i + 1)"></button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="about d-flex align-items-center" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="row justify-content-between mb-5 p-5">
+      <div class="col-lg-8">
+        <h2 id="about-heading" class="fs-3 fw-medium">قسم من نحن</h2>
+        <p class="fs-6">هنا يمكنك إضافة وصف مختصر حول الغرض من البوابة متبوعًا بزر الحث على اتخاذ إجراء وصورة أو رسم
+          توضيحي على الجانب الأيسر.</p>
+      </div>
+      <div class="col-lg-2">
+        <button type="button" class="btn btn-light btn-sm shadow-sm btn-outline-success">اجراء ثانوى</button>
+      </div>
+    </div>
+    <div class="row g-4 d-flex justify-content-center align-items-center">
+      <div *ngFor="let stat of stats" class="col-6 col-md-3 d-flex justify-content-center">
+        <div class="stat-card d-flex flex-column align-items-center">
+          <div class="icon-parent">
+            <i class="pi {{ stat.icon }} icon" aria-hidden="true"></i>
+          </div>
+          <h3 class="fs-1 fw-normal text-success" [attr.aria-label]="stat.label + ': ' + stat.value">{{ stat.value }}</h3>
+          <p>{{ stat.unit }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-service-section></app-service-section>
+
+<section class="article" aria-labelledby="articles-heading">
+  <div class="container">
+    <div class="row justify-content-between mb-5 p-5">
+      <div class="col-lg-8">
+        <h2 id="articles-heading" class="fs-3 fw-medium">قسم الاخبار و المقالات</h2>
+        <p class="fs-6">هنا يمكنك إضافة وصف مختصر حول الغرض من البوابة.</p>
+      </div>
+      <div class="col-lg-2">
+        <button type="button" class="btn btn-light btn-sm shadow-sm btn-outline-success">عرض الكل</button>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div *ngFor="let article of articles" class="col-md-4">
+        <article class="card border border-1 border-light-subtle p-2" style="width: 18rem;">
+          <img [src]="article.image" class="card-img-top" [alt]="article.title">
+          <div class="card-body">
+            <h3 class="card-title fs-5">{{ article.title }}</h3>
+            <p class="card-text">{{ article.description }}</p>
+            <a [href]="article.link" class="btn btn-success">قراءة المزيد<span class="sr-only"> عن {{ article.title }}</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="partner" aria-labelledby="partners-heading">
+  <div class="container">
+    <div class="row justify-content-end mb-4 pt-5 px-5">
+      <div class="col-lg-8 text-end">
+        <h2 id="partners-heading" class="fs-3 fw-medium">قسم الشركاء</h2>
+      </div>
+    </div>
+    <div class="partner-carousel-container">
+      <p-carousel
+        [value]="partnerLogos"
+        [numVisible]="7"
+        [numScroll]="1"
+        [responsiveOptions]="partnerResponsiveOptions"
+        [showIndicators]="false"
+        [showNavigators]="true"
+        [circular]="true">
+        <ng-template let-partner pTemplate="item">
+          <div class="partner-card align-items-center d-flex flex-column justify-content-center">
+            <img [src]="partner.logo" [alt]="'شعار ' + partner.name" class="partner-logo-img">
+            <p class="partner-label">{{ partner.name }}</p>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</section>
